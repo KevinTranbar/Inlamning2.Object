@@ -26,7 +26,9 @@ public class Task3 { //Can be done with TreeSet
             queue.add(word);
         }
 
-        System.out.println(queue);
-
+        for (String word : queue){
+            System.out.println(word);
+        }
+        scanner.close();
     }
 }

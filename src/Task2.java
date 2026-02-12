@@ -22,5 +22,6 @@ public class Task2 {
                 System.out.print(stack.pop() + ", ");
             }
         }
+        scanner.close();
     }
 }
