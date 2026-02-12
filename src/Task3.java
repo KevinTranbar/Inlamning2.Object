@@ -12,7 +12,7 @@ public class Task3 { //Can be done with TreeSet
         System.out.println("Enter a string: ");
         String[] words = scanner.nextLine().toLowerCase().trim().split(" +");
 
-        for (int i = 0; i < words.length - 1; i++) { // Bubble sort
+        for (int i = 0; i < words.length - 1; i++) { //Bubble sort
             for (int j = 0; j < words.length - 1 - i; j++) {
                 if (words[j].compareTo(words[j + 1]) > 0) {
                     String temp = words[j];
