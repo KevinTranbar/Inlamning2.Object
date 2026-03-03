@@ -45,6 +45,8 @@ public class ManagePlayers {
 
         Collections.sort(players);
         Collections.reverse(players);
+
         players.forEach(e -> System.out.println("Player: " + e.getName() + " " + e.getTeam() + " " + e.getPosition() + " " + e.getNumOfGoals()));
+
     }
 }
