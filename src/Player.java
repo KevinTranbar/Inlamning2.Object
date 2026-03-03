@@ -1,4 +1,4 @@
-public class Player {
+public class Player implements Comparable<Player>{
 
     private String name;
     private String team;
@@ -37,5 +37,15 @@ public class Player {
     }
     public void setNumOfGoals(int numOfGoals) {
         this.numOfGoals = numOfGoals;
+    }
+
+    @Override
+    public int compareTo(Player o) {
+        if (this.numOfGoals < o.numOfGoals) {
+            return -1;
+        } else if (this.numOfGoals > o.numOfGoals) {
+            return 1;
+        } else
+            return 0;
     }
 }
