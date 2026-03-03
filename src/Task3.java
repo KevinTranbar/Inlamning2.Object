@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Task3 { //Can be done with TreeSet
 
     public static void main(String[] args) {
-        //A variant similar to ArrayList (Queue implemented in LinkedList and is therefore needed)
+        //A variant similar to ArrayList (LinkedList is implemented from the Queue interface)
         Queue<String> queue = new LinkedList<>();
         Scanner scanner = new Scanner(System.in);
 
