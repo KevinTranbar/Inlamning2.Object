@@ -14,8 +14,17 @@ public class Task4 {
         courses.put("1ik171", "Databaser och datamodellering");
 
         System.out.println("Enter a course code: ");
-        System.out.println(courses.getOrDefault(scanner.nextLine().toLowerCase(), "Course not found")); //Ändra
+        //System.out.println(courses.getOrDefault(scanner.nextLine().toLowerCase(), "Course not found"));
         //If key exists = get value, if key doesn't exist = default value
+
+        String input = scanner.nextLine();
+        if (courses.containsKey(input)) {
+            String course = courses.get(input);
+            System.out.println(input + " " + course);
+        }
+        else {
+            System.out.println("Course not found");
+        }
         scanner.close();
     }
 }
