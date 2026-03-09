@@ -24,6 +24,19 @@ public class ManagePlayers {
         }
     }
 
+    public void searchPlayer() {
+        System.out.println("Name: ");
+        String name = scanner.nextLine();
+
+        for (Player p : players) {
+            if (p.getName().equalsIgnoreCase(name)) {
+                System.out.println("Player: " + p.getName() + " " + p.getTeam() + " " + p.getPosition() + " " + p.getNumOfGoals());
+                return;
+            }
+        }
+        System.out.println("Player: " + name + " not found");
+    }
+
     public void addPlayer(){
         System.out.println("Name: " );
         String name = scanner.nextLine();
@@ -41,11 +54,10 @@ public class ManagePlayers {
         players.add(player);
 
         System.out.println("Add another Player? (Y/N):");
-        if (!scanner.nextLine().equalsIgnoreCase("Y")) {
-            playerInterface();
-        } else
+        if (scanner.nextLine().equalsIgnoreCase("Y")) {
             addPlayer();
-
+        } else
+            playerInterface();
     }
 
     public void removePlayer(){
@@ -55,24 +67,10 @@ public class ManagePlayers {
         players.removeIf(hej -> hej.getName().equalsIgnoreCase(name));
 
         System.out.println("Remove another Player? (Y/N):");
-        if (!scanner.nextLine().equalsIgnoreCase("Y")) {
-            playerInterface();
-        } else
+        if (scanner.nextLine().equalsIgnoreCase("Y")) {
             removePlayer();
-
-    }
-
-    public void searchPlayer() {
-        System.out.println("Name: ");
-        String name = scanner.nextLine();
-
-        for (Player p : players) {
-            if (p.getName().equalsIgnoreCase(name)) {
-                System.out.println("Player: " + p.getName() + " " + p.getTeam() + " " + p.getPosition() + " " + p.getNumOfGoals());
-                return;
-            }
-        }
-        System.out.println("Player: " + name + " not found");
+        } else
+            playerInterface();
     }
 
     public void showPlayersByNumOfGoals(){
@@ -82,10 +80,9 @@ public class ManagePlayers {
         players.forEach(e -> System.out.println("Player: " + e.getName() + " " + e.getTeam() + " " + e.getPosition() + " " + e.getNumOfGoals()));
 
         System.out.println("Go back? (Y/N):");
-        if (!scanner.nextLine().equalsIgnoreCase("Y")) {
-            showPlayersByNumOfGoals();
-        } else
+        if (scanner.nextLine().equalsIgnoreCase("Y")) {
             playerInterface();
-
+        } else
+            showPlayersByNumOfGoals();
     }
 }
