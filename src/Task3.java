@@ -1,8 +1,6 @@
-import java.util.Queue;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
-public class Task3 { //Can be done with TreeSet
+public class Task3 {
 
     public static void main(String[] args) {
         //A variant similar to ArrayList (LinkedList is implemented from the Queue interface)
@@ -12,23 +10,17 @@ public class Task3 { //Can be done with TreeSet
         System.out.println("Enter a string: ");
         String[] words = scanner.nextLine().toLowerCase().trim().split(" +");
 
-        for (int i = 0; i < words.length - 1; i++) { //Bubble sort
-            for (int j = 0; j < words.length - 1 - i; j++) {
-                if (words[j].compareTo(words[j + 1]) > 0) {
-                    String temp = words[j];
-                    words[j] = words[j + 1];
-                    words[j + 1] = temp;
-
-                }
+        for (String word : words){
+            if (Character.isLetter(word.charAt(0))) {
+                queue.add(word);
             }
         }
-        for (String word : words){
-            queue.add(word);
-        }
 
-        for (String word : queue){
-            System.out.println(word);
-        }
+        ArrayList<String> list = new ArrayList<>(queue);
+        Collections.sort(list);
+
+        list.forEach(e -> System.out.println(e));
+
         scanner.close();
     }
 }
